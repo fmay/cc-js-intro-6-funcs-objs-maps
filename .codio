@@ -1,0 +1,17 @@
+{
+// Configure your Run and Preview buttons here.
+
+	// Run button configuration
+  "commands": {
+    "Functions": "~/workspace/.guides/restore.sh 01-functions",
+    "Objects": "~/workspace/.guides/restore.sh 01a-objects",  
+    "Basic Map": "~/workspace/.guides/restore.sh 02-basic",  
+    "Geolocation": "~/workspace/.guides/restore.sh 03-location",
+    "Add a Marker": "~/workspace/.guides/restore.sh 04-marker"
+  },
+  
+	// Preview button configuration
+  "preview": {
+        "Preview": "https://{{domain}}/{{index}}"
+  }
+}
