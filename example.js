@@ -1,61 +1,49 @@
 /**
-* Created with cc-jsintro-6-func-obj-maps.
+* JS Examples
 * User: fmay
-* Date: 2014-08-28
-* Time: 05:04 PM
-* To change this template use Tools | Templates.
+* Date: 2014-08-24
+* Time: 10:20 AM
 */
 
-function display(message, pre, post) {
-  var i;
-	for(i=0; i<pre; i++)
-	document.write("<br/>");
-  document.write(message);
-	for(i=0; i<post; i++)
-    document.write("<br/>");
-}
 
-function coordDisplay(obj) {
-  if(obj.coord===undefined)
-		document.write("Lat:" + obj.lat + " Lng:" + obj.lng);
-  else
-    document.write("Lat:" + obj.coord.lat + " Lng:" + obj.coord.lng);
-}
-
-function coordinates1(latitude, longitude, zoom) {
+function gotPosCallback(position) {
   var coord = {};
-  coord.lat = latitude;
-  coord.lng = longitude;
-  coord.zoom = 8;
-  display("Function 1 : ", 1, 0);  
-  coordDisplay(coord);
-}
-
-function coordinates2(latitude, longitude, zoom) {
-  var coord = {
-    lat : latitude,
-    lng : longitude,
-    zoom : 8
+  var gmap;
+  var mapOptions = {
+    center: coord,
+    zoom: 8
   };
-  display("Function 2 : ", 1, 0);  
-  coordDisplay(coord);
+  var infoWindow;
+  var marker;
+  
+  coord.lat = position.coords.latitude;
+  coord.lng = position.coords.longitude;  
+  gmap = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+  
+  infowindow = new google.maps.InfoWindow({
+      content: "<div id='mycontent'>This is where I am <b>currently</b> sitting.</div>"
+  });
+
+  marker = new google.maps.Marker({
+      position: coord,
+      map: gmap,
+      title: 'Here I Am!'
+  });
+  google.maps.event.addListener(marker, 'click', function() {
+    infowindow.open(gmap,marker);
+  });
+  
 }
 
-function coordinatesNested(latitude, longitude, zoom) {
-  var combo = {
-    coord : {
-			lat : latitude,
-			lng : longitude,    
-		},
-    zoom : 8
-  };
-  display("Function Nested : ", 1, 0);  
-  coordDisplay(combo);
+function errorFunction () {
+  document.write("Unable to get the coordinates from the browser");
 }
 
-function play() {
-  coordinates1(-34.397, 150.644, 8);
-  coordinates2(-34.397, 150.644, 8);
-  coordinatesNested(-34.397, 150.644, 8);
+function getCurrentLocation() {
+	navigator.geolocation.getCurrentPosition(gotPosCallback, errorFunction);	
+}
+
+function googleMapsPlay() {
+  window.onload = getCurrentLocation;
 }
 
