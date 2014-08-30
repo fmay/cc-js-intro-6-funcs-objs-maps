@@ -1,12 +1,21 @@
-@annotation:tour intro
-#FUNCTIONS, CALLBACKS, OBJECTS & GOOGLE MAPS
+---
+title: "FUNCTIONS, CALLBACKS, OBJECTS & GOOGLE MAPS"
+files: []
+editable: true
+layout: 2-panels-tree
+
+---
 In this module we are going to build a small Google Maps application as a way of introducing you to *functions*, *callbacks* and *objects*.
 
 We are going to throw several new and important things at you in this module, so don't skip anything as we will be building on this in later modules.
 
+---
+title: Target Application
+files: []
+editable: true
+layout: 2-panels-tree
 
-@annotation:tour targetapp
-#Target Application
+---
 We are finally going to do something more interesting. 
 
 Watch the video below and you will see the application that we will be building in this module.
@@ -17,9 +26,13 @@ Watch the video below and you will see the application that we will be building 
 - it should be located at your current location (you will need to give permission when the browser prompts you)
 - it places a marker on the map at your location
 - if you click on the marker, it will show a pop-up message
+---
+title: Functions
+files: []
+editable: true
+layout: 2-panels-tree
 
-@annotation:tour functions
-#Functions
+---
 Sorry to do this to you, but we need to introduce you to 2 final and important programming constructs before we get on the Google Maps application.
 
 Functions are very powerful and actually rather easy to understand.
@@ -27,9 +40,13 @@ Functions are very powerful and actually rather easy to understand.
 >Select 'Functions' from the ![](.guides/an-img/rocket.png) Rocket menu at the top to load some code or restore it if you mess it up.
 
 Now take a look at the code and preview it. We'll disect the code to see what functions are all about.
+---
+title: What is a function
+files: []
+editable: true
+layout: 2-panels-tree
 
-@annotation:tour funcintro
-#What is a function
+---
 A function is simply a piece of code that you wrap up in a way that can be called by your code in other locations.
 
 There are a couple of reasons why you should use functions rather than simply having it 'inline'.
@@ -67,9 +84,13 @@ myFunc() {
 ```
 
 Now you can see how much better this *looks*. Furthermore, if I make a mistake with my formula, I simply correct the `volumeSphere` function once without having to worry about the many places it might get called from.
+---
+title: Function Parameters
+files: []
+editable: false
+layout: 2-panels-tree
 
-@annotation:tour parms
-#Function Parameters
+---
 Let's look at the `volumeSphere` function again
 
 ```
@@ -93,10 +114,13 @@ function myFunction(latitude, longitude, zoom)
 ```
 
 We will delve deeper into functions in a later module, but this is the most important thing you need to know for know about function parameters.
+---
+title: Return values
+files: []
+editable: false
+layout: 2-panels-tree
 
-
-@annotation:tour return
-#Return values
+---
 Here's our `volumeSphere` function again
 
 ```
@@ -116,9 +140,13 @@ function volumeSphere(radius) {
   return volume;
 }
 ```
+---
+title: Example code
+files: []
+editable: false
+layout: 2-panels-tree
 
-@annotation:tour samplefuncs
-#Example code
+---
 Now take a look at the example code by opening `example.js`. Here you can see how we have created a few functions, including a new, improved `display` function that takes 3 parameters.
 
 See if you can figure out what is going on.
@@ -126,9 +154,13 @@ See if you can figure out what is going on.
 ##Challenge
 Look at the `volumeSphere` function and see how we have `radius*radius*radius'. Why not create a new function `cubed()` and make our `volumeSphere` like simpler.
 
+---
+title: Objects
+files: []
+editable: false
+layout: 2-panels-tree
 
-@annotation:tour objects
-#Objects
+---
 Now for the final thing before we tackle our Google Maps application.
 
 >Select 'Objects' from the ![](.guides/an-img/rocket.png) Rocket menu at the top to load some code or restore it if you mess it up.
@@ -183,9 +215,13 @@ I would reference elements like this
 combo.coord.lat = -34.397;
 combo.zoom = 8;
 ``
+---
+title: Why use an Object
+files: []
+editable: false
+layout: 2-panels-tree
 
-@annotation:tour whyobjects
-#Why use an Object
+---
 Objects are used in most modern programming languages and for very good reasons
 
 - it promotes *modularity* which makes encapsulates a real-world view of things
@@ -210,9 +246,13 @@ The usefulness of this becomes evident once you have objects that have tens of e
 ##Advanced use of objects
 There are some much more powerful things that you can do with objects and we there is a module dedicated to object oriented programming coming up.
 
+---
+title: Example code
+files: []
+editable: false
+layout: 2-panels-tree
 
-@annotation:tour objectsexamples
-#Example code
+---
 Our Objects sample code shows us using objects. There are some important things to note.
 
 ##Object Creation - Method 1
@@ -228,9 +268,13 @@ The function `coordinates2` creates an object in the way we described in the pre
 Take a look at the function `coordDisplay(obj)`. You can see that it expects to be passed an object rather than 3 individual variables. You should be able to figure it out.
 
 Note that the name we give the object can be anything we choose (`obj` in our case) but it will have the same key names within it as per our object definition in the functin that calls `coordDisplay()`.
+---
+title: "Finally, our Map application!"
+files: []
+editable: false
+layout: 2-panels-tree
 
-@annotation:tour setupmaps
-#Finally, our Map application!
+---
 Before we run it, we will need to make sure you have a Google Account and enabled Map API access.
 
 
@@ -262,9 +306,13 @@ All done. If you need the key again, you can find it again within [https://code.
 Let's make sure everything is working properly by Previewing the project. You should see a map. If you get a message pop up saying "Google has disabled use of the Maps API for this application ...." then you have made a mistake in the above process, so carefully copy and paste the key again and make sure it looks exactly like this (but with your key).
 
 
+---
+title: The program flow
+files: []
+editable: false
+layout: 2-panels-tree
 
-@annotation:tour flow
-#The program flow
+---
 Run the Preview and you will see we get a map centered on Sydney, Australia.
 
 ###index.html
@@ -317,8 +365,13 @@ We do this, as you can see, by setting the `onload` event property value to the 
 
 The browser will now ensure that displayMap() gets called at the right time.
 
-@annotation:tour displaymap
-#The displayMap() function
+---
+title: The displayMap() function
+files: []
+editable: false
+layout: 2-panels-tree
+
+---
 After our lesson on objects, it should be fairly easy to understand what is going on here. 
 
 ```
@@ -393,9 +446,13 @@ For those interested, we are creating a new Map object variable `gmap`. What's s
 - takes parameters (the HTML id and the mapOptions object)
 - actually displays the map (we don't worry about this, the Google API does)
 - give us back a regular Javascript object that we can store, use and refer to later.
+---
+title: Getting your current location
+files: []
+editable: false
+layout: 2-panels-tree
 
-@annotation:tour location
-#Getting your current location
+---
 So Sydney, Australia may not be of much interest to you, but your current location in the world probably is.
 
 So what we'll do now is to get the map to be positioned at your current location. The browser actually can give you your latitude and longitude coordinates fairly accurately, although not as accurately as GPS.
@@ -405,9 +462,13 @@ So what we'll do now is to get the map to be positioned at your current location
 Preview to see what should be your current location.
 
 In order to explain the code, we need to introduce a new and important concept - *callbacks*.
+---
+title: Callbacks
+files: []
+editable: false
+layout: 2-panels-tree
 
-@annotation:tour callbacks
-#Callbacks
+---
 With the web and browsers, there are lots of occasions where you need to call a function that return a value to you *but* that function may take some time to return.
 
 In our example, we want to get the browser to tell us our current global coordinates. The problem is that it can take millseconds or several seconds. 
@@ -479,9 +540,13 @@ function main() {
 In each case, we are passing a function name (which is a variable like most things in Javascript) as a parameter. 
 
 The called function (`getFlightArrivals()` for example) will now do it's stuff and once finished, rather than returning a value in the way normal functions do, it will call `arrivalsCompleted()`, passing in any arrivals data as an object.
+---
+title: Geolocation code explained
+files: []
+editable: false
+layout: 2-panels-tree
 
-@annotation:tour locationexplained
-#Geolocation code explained
+---
 Now we've covered callbacks, we're ready to look at our code again. Make sure you've selected 'Geolocation' from the ![](.guides/an-img/rocket.png) Rocket menu at the top.
 
 Let's look at the code at the bottom of `example.js`
@@ -522,9 +587,13 @@ If you look higher up in the code, you will see that these 2 functions `gotPosCa
 
 ##Displaying the map in the callback function
 If you look at `gotPosCallback()`, our callback function, you will see that it is doing exactly what `displayMap()` did in our first, basic example. In fact, we could just have well have called the function `displayMap()` but we chose another function name to highligt its callback nature.
+---
+title: Adding a Marker to the Map
+files: []
+editable: false
+layout: 2-panels-tree
 
-@annotation:tour markers
-#Adding a Marker to the Map
+---
 The last thing we'll do with our application is to add a marker onto the page to pinpoint your current location.
 
 >Select 'Add a Marker' from the ![](.guides/an-img/rocket.png) Rocket menu at the top.
@@ -621,9 +690,13 @@ Anyway, what the code does is to display the popup window. It is handled by the 
 
 `infowindow` is an object managed by the Google API and one of its properties is an `open()` function. Remember that we defined the properties of `infowindow` earlier, so it knows what to do.
 
+---
+title: API documentation
+files: []
+editable: false
+layout: 2-panels-tree
 
-@annotation:tour documentation
-#API documentation
+---
 *How am I supposed to find out what parameters a 3rd party API expects?*,  you may ask.
 
 The short answer is "Google it". Any API worth its salt comes with documentation.
@@ -637,31 +710,15 @@ A good way to get started is to look at code examples which, if well documented,
 You might then want to find the API reference (try googling "google maps api reference") and you should [end up here](https://developers.google.com/maps/documentation/javascript/reference).
 
 You will then end up looking at specific API object methods [like this one](https://developers.google.com/maps/documentation/javascript/reference#Map), properties and events. This can get be a little intimidating at first as it is usually very geeky. Over time you will learn how to read this comfortably.
+---
+title: Summary
+files: []
+editable: false
+layout: 2-panels-tree
 
-
-@annotation:tour summary
-#Summary
+---
 So that's it. This module was a very major step in terms in applying your coding knowlegde to something practical. 
 
 It is very important that you fully understand these concepts as we build on these in he next modules.
 
 Feel free to hack the code around as much as you like as you can always restore it from the Rocket menu.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
