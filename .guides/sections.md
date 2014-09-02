@@ -37,7 +37,7 @@ Sorry to do this to you, but we need to introduce you to 2 final and important p
 
 Functions are very powerful and actually rather easy to understand.
 
->Select 'Functions' from the ![](.guides/an-img/rocket.png) Rocket menu at the top to load some code or restore it if you mess it up.
+>Select 'Functions' from the ![](.guides/img/rocket.png) Rocket menu at the top to load some code or restore it if you mess it up.
 
 Now take a look at the code and preview it. We'll disect the code to see what functions are all about.
 ---
@@ -57,7 +57,7 @@ There are a couple of reasons why you should use functions rather than simply ha
 ##Without a function
 Here is a piece of code that calculates the volume of a sphere. The formula for calculating this is
 
-![](.guides/an-img/sphere.png)
+![](.guides/img/sphere.png)
 
 This is a valid, but not elegant, way to code this
 
@@ -165,7 +165,7 @@ layout: 2-panels-tree
 ---
 Now for the final thing before we tackle our Google Maps application.
 
->Select 'Objects' from the ![](.guides/an-img/rocket.png) Rocket menu at the top to load some code or restore it if you mess it up.
+>Select 'Objects' from the ![](.guides/img/rocket.png) Rocket menu at the top to load some code or restore it if you mess it up.
 
 An *object* is a javascript variable that consists of other variables. For example, let's say we have 3 variables `latitude`, `longitude` and `zoomLevel`.
 
@@ -281,7 +281,7 @@ Before we run it, we will need to make sure you have a Google Account and enable
 
 
 ##Load the sample code
->Select 'Basic Map' from the ![](.guides/an-img/rocket.png) Rocket menu at the top.
+>Select 'Basic Map' from the ![](.guides/img/rocket.png) Rocket menu at the top.
 
 ##Create a Google account
 You may already have one (a gmail account will do), in which case you can skip the first step.
@@ -293,10 +293,10 @@ You may already have one (a gmail account will do), in which case you can skip t
 5. Scroll a long way down until you find the 'Google Maps JavaScript API v3' entry, and switch it on with the slider
 6. Now click the API Access menu item on the left-hand menu
 7. You will now see the following screen. Press the 'Create new Browser key' button.
-![](.guides/an-img/api-key-1.png)
+![](.guides/img/api-key-1.png)
 8. On the screen that pops up, simply press 'Create' without entering anything.
 9. You will now see the following screen. You need to copy the API key (highlighted below) to the clipboard so you can paste it into your code.
-![](.guides/an-img/api-key-2.png)
+![](.guides/img/api-key-2.png)
 10. Finally, open up your `index.html` file and look for the line shown below in the <head> section. You will see an existing (but invalid) key looking like `key=AIzaSyCSiWK2F2oq5yIZ69AwD4BRQY7nPs5gl9Y`. You may need to scroll the line to the right to see the whole line. You should replace the long key value after the `=` with the one you copied to the clipboard in the previous step.
 ```
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCSiWK2F2oq5yIZ69AwD4BRQY7nPs5gl9Y"></script>
@@ -459,7 +459,7 @@ So Sydney, Australia may not be of much interest to you, but your current locati
 
 So what we'll do now is to get the map to be positioned at your current location. The browser actually can give you your latitude and longitude coordinates fairly accurately, although not as accurately as GPS.
 
->Select 'Geolocation' from the ![](.guides/an-img/rocket.png) Rocket menu at the top.
+>Select 'Geolocation' from the ![](.guides/img/rocket.png) Rocket menu at the top.
 
 Preview to see what should be your current location.
 
@@ -563,7 +563,7 @@ editable: false
 layout: 2-panels-tree
 
 ---
-Now we've covered callbacks, we're ready to look at our code again. Make sure you've selected 'Geolocation' from the ![](.guides/an-img/rocket.png) Rocket menu at the top.
+Now we've covered callbacks, we're ready to look at our code again. Make sure you've selected 'Geolocation' from the ![](.guides/img/rocket.png) Rocket menu at the top.
 
 Let's look at the code at the bottom of `example.js`
 
@@ -612,7 +612,7 @@ layout: 2-panels-tree
 ---
 The last thing we'll do with our application is to add a marker onto the page to pinpoint your current location.
 
->Select 'Add a Marker' from the ![](.guides/an-img/rocket.png) Rocket menu at the top.
+>Select 'Add a Marker' from the ![](.guides/img/rocket.png) Rocket menu at the top.
 
 If you preview it, we can see not only is there a marker on it, but if you click on the marker, you get a custom popup.
 
@@ -727,9 +727,14 @@ You might then want to find the API reference (try googling "google maps api ref
 
 You will then end up looking at specific API object methods [like this one](https://developers.google.com/maps/documentation/javascript/reference#Map), properties and events. This can get be a little intimidating at first as it is usually very geeky. Over time you will learn how to read this comfortably.
 ---
-title: Blocking/Synchronous functions
+title: Summary
 files: []
 editable: false
 layout: ""
 
 ---
+So that's it. This module was a very major step in terms in applying your coding knowlegde to something practical. 
+
+It is very important that you fully understand these concepts, as we will build on these in he next modules.
+
+Feel free to hack the code around as much as you like as you can always restore it from the Rocket menu.
