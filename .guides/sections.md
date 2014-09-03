@@ -190,7 +190,7 @@ var coord = {
 };
 ```
 
-We now have an object called `coord`. `lat` and 'lng` are called *keys*. I can access object keys like this
+We now have an object called `coord`. `lat` and `lng` are called *keys*. I can access object keys like this
 
 ```
 coord.lat = -34.397;
@@ -216,7 +216,7 @@ I would reference elements like this
 ```
 combo.coord.lat = -34.397;
 combo.zoom = 8;
-``
+```
 ---
 title: Why use an Object
 files: []
@@ -269,7 +269,7 @@ The function `coordinates2` creates an object in the way we described in the pre
 ##Passing an object as a parameter to a function
 Take a look at the function `coordDisplay(obj)`. You can see that it expects to be passed an object rather than 3 individual variables. You should be able to figure it out.
 
-Note that the name we give the object can be anything we choose (`obj` in our case) but it will have the same key names within it as per our object definition in the functin that calls `coordDisplay()`.
+Note that the name we give the object can be anything we choose (`obj` in our case) but it will have the same key names within it as per our object definition in the function that calls `coordDisplay()`.
 ---
 title: OUR MAP APPLICATION
 files: []
@@ -402,7 +402,7 @@ gmap = new google.maps.Map(
   mapOptions);
 ```
 
-In the same way we *included* our `example.js` file in the <head> section of `index.html`, we also incuded the Google Maps API. This API is managed by another `.js` file, but this time it does not live within our project, but on the web. If you look at the include line, you can see the actual url (web address) of the file.
+In the same way we *included* our `example.js` file in the <head> section of `index.html`, we also include the Google Maps API. This API is managed by another `.js` file, but this time it does not live within our project, but on the web. If you look at the include line, you can see the actual url (web address) of the file.
 
 ```
 <script type="text/javascript"
@@ -435,7 +435,7 @@ We tell it *where* to display it on our page with  `document.getElementById("map
 We tell it *how* to display using our nicely created `mapOptions` object
 
 ##What is going on precisely?
-Don't worry too much about this as we will be convering this in our next module.
+Don't worry too much about this as we will be covering this in our next module.
 
 ```
 gmap = new google.maps.Map(
@@ -446,7 +446,7 @@ gmap = new google.maps.Map(
 For those interested, we are creating a new Map object variable `gmap`. What's special about this is that the creation of the object
 
 - takes parameters (the HTML id and the mapOptions object)
-- actually displays the map (we don't worry about this, the Google API does)
+- actually displays the map (we don't worry about this, the Google API does that)
 - give us back a regular Javascript object that we can store, use and refer to later.
 ---
 title: Getting your current location
@@ -523,7 +523,7 @@ function main() {
 }
 ```
 
-Let's assume that we are using *web services* (like the Google Maps API) to get the flight arrival and temperature. Each of these services might take 2 seconds to process. If we took a blocking approach, then we would wait until the map was displayed before getting the flight arrivals before getting the temperature.
+Let's assume that we are using *web services* (like the Google Maps API) to get the flight arrival and temperature. Each of these services might take 2 seconds to process. If we took a blocking approach, then we would wait until the map was displayed before getting the flight arrivals and then before getting the temperature.
 
 In other words, we would wait 6 seconds in total.
 
@@ -602,7 +602,7 @@ We can see that `navigator.geolocation.getCurrentPosition()` expects to receive 
 If you look higher up in the code, you will see that these 2 functions `gotPosCallback()` and `errorFunction()` are both defined.
 
 ##Displaying the map in the callback function
-If you look at `gotPosCallback()`, our callback function, you will see that it is doing exactly what `displayMap()` did in our first, basic example. In fact, we could just have well have called the function `displayMap()` but we chose another function name to highligt its callback nature.
+If you look at `gotPosCallback()`, our callback function, you will see that it is doing exactly what `displayMap()` did in our first, basic example. In fact, we could just have well have called the function `displayMap()` but we chose another function name to highlight its callback nature.
 ---
 title: Adding a Marker to the Map
 files: []
@@ -637,7 +637,7 @@ google.maps.event.addListener(
 ```
 
 ##Inline Objects
-This code shows a shorthand way of writing code that is used a lot but makes the code a little harder to read. Rather than defininf a separate object variable, we code it *inline*.
+This code shows a shorthand way of writing code that is used a lot but makes the code a little harder to read. Rather than define a separate object variable, we code it *inline*.
 
 Let's take this piece of code 
 
@@ -733,8 +733,8 @@ editable: false
 layout: ""
 
 ---
-So that's it. This module was a very major step in terms in applying your coding knowlegde to something practical. 
+So that's it. This module was a very major step in terms in applying your coding knowledge to something practical. 
 
 It is very important that you fully understand these concepts, as we will build on these in he next modules.
 
-Feel free to hack the code around as much as you like as you can always restore it from the Rocket menu.
+Feel free to hack the code around as much as you like as you can always restore it from the ![](.guides/img/rocket.png) Rocket menu.

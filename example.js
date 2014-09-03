@@ -11,7 +11,7 @@ function gotPosCallback(position) {
   var gmap;
   var mapOptions = {
     center: coord,
-    zoom: 8
+    zoom: 12
   };
   var infoWindow;
   var marker;
@@ -20,26 +20,13 @@ function gotPosCallback(position) {
   coord.lng = position.coords.longitude;  
   gmap = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
   
-  infowindow = new google.maps.InfoWindow({
-      content: "<div id='mycontent'>This is where I am <b>currently</b> sitting.</div>"
-  });
-
-  marker = new google.maps.Marker({
-      position: coord,
-      map: gmap,
-      title: 'Here I Am!'
-  });
-  google.maps.event.addListener(marker, 'click', function() {
-    infowindow.open(gmap,marker);
-  });
-  
 }
 
 function errorFunction () {
   document.write("Unable to get the coordinates from the browser");
 }
 
-function getCurrentLocation() {
+function getCurrentLocation(){
 	navigator.geolocation.getCurrentPosition(gotPosCallback, errorFunction);	
 }
 
