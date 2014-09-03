@@ -39,7 +39,7 @@ Functions are very powerful and actually rather easy to understand.
 
 >Select 'Functions' from the ![](.guides/img/rocket.png) Rocket menu at the top to load some code or restore it if you mess it up.
 
-Now take a look at the code and preview it. We'll disect the code to see what functions are all about.
+Now take a look at the code and preview it. We'll dissect the code to see what functions are all about.
 ---
 title: What is a function
 files: []
@@ -226,7 +226,7 @@ layout: 2-panels-tree
 ---
 Objects are used in most modern programming languages and for very good reasons
 
-- it promotes *modularity* which makes encapsulates a real-world view of things
+- it promotes *modularity* which encapsulates a real-world view of things
 - it promotes greater flexibility and maintainability in programming
 - it makes your code easier to understand, especially when coming back to it months later or, very importantly, when other people look at your code for the first time.
 

@@ -182,7 +182,7 @@ I would reference elements like this
 ```
 combo.coord.lat = -34.397;
 combo.zoom = 8;
-``
+```
 
 @annotation:tour whyobjects
 #Why use an Object
