@@ -9,7 +9,7 @@ In this module we are going to build a small Google Maps application as a way of
 
 We are going to throw several new and important things at you in this module, so don't skip anything as we will be building on this in later modules.
 
-![](.guides/img/app-ss.png)
+![](.guides/img/app-ss.jpg)
 ---
 title: Target Application
 files: []
@@ -22,6 +22,7 @@ We are finally going to do something more interesting.
 Watch the video below and you will see the application that we will be building in this module.
 
 
+![500x350](http://www.youtube.com/watch?v=qJwKu-myR-s&feature=youtu.be)
 
 - it will show a map 
 - it should be located at your current location (you will need to give permission when the browser prompts you)
