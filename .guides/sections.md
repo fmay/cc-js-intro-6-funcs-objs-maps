@@ -9,6 +9,7 @@ In this module we are going to build a small Google Maps application as a way of
 
 We are going to throw several new and important things at you in this module, so don't skip anything as we will be building on this in later modules.
 
+![](.guides/img/app-ss.png)
 ---
 title: Target Application
 files: []
@@ -20,7 +21,7 @@ We are finally going to do something more interesting.
 
 Watch the video below and you will see the application that we will be building in this module.
 
-![400x300](http://www.youtube.com/watch?v=xxxxxxx&feature=youtu.be)
+
 
 - it will show a map 
 - it should be located at your current location (you will need to give permission when the browser prompts you)
@@ -61,10 +62,11 @@ Here is a piece of code that calculates the volume of a sphere. The formula for 
 
 This is a valid, but not elegant, way to code this
 
-```
-var radius1=7, radius2=100;
-radius1 = (4*Math.PI*radius1*radius1*radius1)/3);
-radius2 = (4*Math.PI*radius2*radius1*radius2)/3);
+```js
+var radius1=7
+var radius2=100;
+var volume1 = (4*Math.PI*radius1*radius1*radius1)/3);
+var volume2 = (4*Math.PI*radius2*radius1*radius2)/3);
 ```
 
 Here we can see how the exact same piece of code is duplicated on each line. If we made a mistake coding the formula, we would have to correct the mistake in both places. If we had it in 100 places, you can imagine the nightmare.
@@ -79,15 +81,16 @@ function volumeSphere(radius) {
 }
 
 myFunc() {
-  var radius1=7, radius2=100;
-  radius1 = volumeSphere(radius1);
-  radius2 = volumeSphere(radius2);
+  var radius1=7
+  var radius2=100;
+  var volume1 = volumeSphere(radius1);
+  var volume2 = volumeSphere(radius2);
 }
 ```
 
 Now you can see how much better this *looks*. Furthermore, if I make a mistake with my formula, I simply correct the `volumeSphere` function once without having to worry about the many places it might get called from.
 ---
-title: Function Parameters
+title: Function Arguments
 files: []
 editable: false
 layout: 2-panels-tree
@@ -95,27 +98,27 @@ layout: 2-panels-tree
 ---
 Let's look at the `volumeSphere` function again
 
-```
+```js
 function volumeSphere(radius) {
   return (4*Math.PI*radius*radius*radius)/3;
 }
 ```
 
-When we call the function, we need to tell the function what the `radius` of the sphere is. To accomplish this, we create a parameter inside the function definition.
+When we call the function, we need to tell the function what the `radius` of the sphere is. To accomplish this, we create an *argument* inside the function definition.
 
-```
+```js
 volumeSphere(radius)
 ```
 
-We give the parameter a sensible name and this then behaves like a variable just while the function executes.
+We give the argument a sensible name and this can then be thought of as a variable that is available for the duration of function execution.
 
-Some functions require multiple parameters, so you define them like this
+Some functions require several arguments, so you define them like this
 
-```
+```js
 function myFunction(latitude, longitude, zoom)
 ```
 
-We will delve deeper into functions in a later module, but this is the most important thing you need to know for know about function parameters.
+We will delve deeper into functions in a later module, but this is the most important thing you need to know for know about function arguments.
 ---
 title: Return values
 files: []
@@ -125,7 +128,7 @@ layout: 2-panels-tree
 ---
 Here's our `volumeSphere` function again
 
-```
+```js
 function volumeSphere(radius) {
   return (4*Math.PI*radius*radius*radius)/3;
 }
@@ -135,7 +138,7 @@ We want our function to return the volume, so how do we do this? The answer is w
 
 We could have written it longhand like this
 
-```
+```js
 function volumeSphere(radius) {
 	var volume;
   volume = (4*Math.PI*radius*radius*radius)/3;
@@ -149,7 +152,7 @@ editable: false
 layout: 2-panels-tree
 
 ---
-Now take a look at the example code by opening `example.js`. Here you can see how we have created a few functions, including a new, improved `display` function that takes 3 parameters.
+Now take a look at the example code by opening `example.js`. Here you can see how we have created a few functions, including a new, improved `display` function that takes 3 arguments.
 
 See if you can figure out what is going on.
 
@@ -190,9 +193,9 @@ var coord = {
 };
 ```
 
-We now have an object called `coord`. `lat` and 'lng` are called *keys*. I can access object keys like this
+We now have an object called `coord`. `lat` and `lng` are called *keys*. I can access object keys like this
 
-```
+```js
 coord.lat = -34.397;
 coord.lng = 150.644;
 ```
@@ -216,7 +219,7 @@ I would reference elements like this
 ```
 combo.coord.lat = -34.397;
 combo.zoom = 8;
-``
+```
 ---
 title: Why use an Object
 files: []
@@ -231,7 +234,7 @@ Objects are used in most modern programming languages and for very good reasons
 - it makes your code easier to understand, especially when coming back to it months later or, very importantly, when other people look at your code for the first time.
 
 
-One major practical benefit that we can see in our example code is that objects can be passed from one function to another, making function calls and declarations very simple to read and to code when compared to a long list of function paramters ...
+One major practical benefit that we can see in our example code is that objects can be passed from one function to another, making function calls and declarations very simple to read and to code when compared to a long list of function arguments.
 
 ```
 showMap(combo);
@@ -243,7 +246,7 @@ Rather than this more long winded method.
 showMap(longitude, latitude, zoom);
 ```
 
-The usefulness of this becomes evident once you have objects that have tens of elements. Imagine those horribly long parameter lists and function definitions!
+The usefulness of this becomes evident once you have objects that have tens of elements. Imagine those horribly long argument lists and function definitions!
 
 ##Advanced use of objects
 There are some much more powerful things that you can do with objects and we there is a module dedicated to object oriented programming coming up.
@@ -266,7 +269,7 @@ The function `coordinates1` creates an object in a different way to the one we s
 ##Object Creation - Method 2
 The function `coordinates2` creates an object in the way we described in the previous chapter
 
-##Passing an object as a parameter to a function
+##Passing an object as an argument to a function
 Take a look at the function `coordDisplay(obj)`. You can see that it expects to be passed an object rather than 3 individual variables. You should be able to figure it out.
 
 Note that the name we give the object can be anything we choose (`obj` in our case) but it will have the same key names within it as per our object definition in the functin that calls `coordDisplay()`.
@@ -423,7 +426,7 @@ gmap = new google.maps.Map(
    mapOptions);
 ```
 
-With `new google.maps.Map`, we are creating a new Map object, which is defined and managed by the Google Maps API.
+With `new google.maps.Map`, we are creating a new Map object, which is defined and managed by the Google Maps API. This is a slightly different way of creating an object than we looked at earlier and we will be building our own objects of this type in a later module.
 
 But we need to tell the Maps API 
 
@@ -445,7 +448,7 @@ gmap = new google.maps.Map(
 
 For those interested, we are creating a new Map object variable `gmap`. What's special about this is that the creation of the object
 
-- takes parameters (the HTML id and the mapOptions object)
+- takes arguments (the HTML id and the mapOptions object)
 - actually displays the map (we don't worry about this, the Google API does)
 - give us back a regular Javascript object that we can store, use and refer to later.
 ---
@@ -488,7 +491,7 @@ editable: false
 layout: ""
 
 ---
-Take this simple code snippet
+All of the functions you have written so far are *blocking* functions. Take this simple code snippet
 
 ```
 function squared(value) {
@@ -497,7 +500,7 @@ function squared(value) {
 
 function main() {
 	var x = squared(7);
-  display(x);
+	display(x);
 }
 ```
 
@@ -505,7 +508,9 @@ function main() {
 
 When `x = squared(7)` is called in the `main()` function, the `display()` function will not get called until `squared()` has finished and returned a value back to `main()`.
 
-In this type of code, the blocking nature of `squared()` is not just fine, it is required.
+Therefore, `squared()` is blocking the execution of our `main()` function until `squared()` has returned.
+
+The blocking nature of `squared()` is not just fine, it is required.
 ---
 title: Non-blocking / Asynchronous functions
 files: []
@@ -515,23 +520,23 @@ layout: ""
 ---
 Now consider this *pseudo-code* (which means it is illustrative, not functional code)
 
-```
+```js
 function main() {
-	displayMap();
+  displayMap();
   getFlightArrivals();
   getTemperature();
 }
 ```
 
-Let's assume that we are using *web services* (like the Google Maps API) to get the flight arrival and temperature. Each of these services might take 2 seconds to process. If we took a blocking approach, then we would wait until the map was displayed before getting the flight arrivals before getting the temperature.
+Let's assume that we are using *web services* (like the Google Maps API) to get the flight arrival and temperature. Each of these services might take 2 seconds to process. If we each of these functions was *blocking*, then we would wait until the map was displayed before getting the flight arrivals before finally getting the temperature.
 
 In other words, we would wait 6 seconds in total.
 
-However, if these are non-blocking, asynchronous functions, then we call `displayMap()`, which returns instantly. We then call `getFlightArrivals()` which returns instantly and finally `getTemperature()`.
+However, if these are *non-blocking*, *asynchronous* functions, then we call `displayMap()`, which returns instantly. We then call `getFlightArrivals()` which returns instantly and finally `getTemperature()`.
 
 But what about the data we expect back from them? This is what callback functions do. 
 
-> A callback function is called upon completion of execution by an asynchronous function
+> a callback is a piece of executable code that is passed as an argument to other code, which is expected to call back (execute) the argument at some convenient time.
 
 So, our pseudo-code looks like this
 
@@ -547,15 +552,17 @@ function gotTemperature(temperatureObject) {
 }
 
 function main() {
-	displayMap(mapCompleted);
+  displayMap(mapCompleted);
   getFlightArrivals(arrivalsCompleted);
   getTemperature(gotTemperature);
 }
 ```
 
-In each case, we are passing a function name (which is a variable like most things in Javascript) as a parameter. 
+In each case, we are passing a function (it's name) as an argument. 
 
 The called function (`getFlightArrivals()` for example) will now do it's stuff and once finished, rather than returning a value in the way normal functions do, it will call `arrivalsCompleted()`, passing in any arrivals data as an object.
+
+In a later module we will be lookin at how you write your own functions that trigger a callback function.
 ---
 title: Geolocation code explained
 files: []
@@ -569,7 +576,7 @@ Let's look at the code at the bottom of `example.js`
 
 ```
 function getCurrentLocation(){
-	navigator.geolocation.getCurrentPosition(
+  navigator.geolocation.getCurrentPosition(
     gotPosCallback, errorFunction);	
 }
 
@@ -590,11 +597,11 @@ Let's look at our `getCurrentLocation()` function.
 ```
 function getCurrentLocation(){
   navigator.geolocation.getCurrentPosition(
-      gotPosCallback, errorFunction);    
+    gotPosCallback, errorFunction);    
 }
 ```
 
-We can see that `navigator.geolocation.getCurrentPosition()` expects to receive 2 parameters
+We can see that `navigator.geolocation.getCurrentPosition()` expects to receive 2 arguments.
 
 1. A callback function that it should trigger once the position has been determined
 2. A callback function that it should trigger if there was any error in getting the position
@@ -620,19 +627,19 @@ This is accomplished by adding some code to our main `gotPosCallback()` function
 
 ```
 infowindow = new google.maps.InfoWindow({
-	content: "<div id='mycontent'>This is where I am
-	<b>currently</b> sitting.</div>"
+  content: "<div id='mycontent'>This is where I am
+    <b>currently</b> sitting.</div>"
 });
 
 marker = new google.maps.Marker({
-	position: coord,
+  position: coord,
   map: gmap,
   title: 'Here I Am!'
 });
 
 google.maps.event.addListener(
-	marker, 'click', function() {
-	infowindow.open(gmap,marker);
+  marker, 'click', function() {
+  infowindow.open(gmap,marker);
 });
 ```
 
@@ -652,8 +659,8 @@ This allows us to create a Google Maps InfoWindow object. We could have written 
 
 ```
 var objInfoWindow = {
-	content: "<div id='mycontent'>This is where I am
-	  <b>currently</b> sitting.</div>"
+  content: "<div id='mycontent'>This is where I am
+    <b>currently</b> sitting.</div>"
 };
 infowindow = new google.maps.InfoWindow(objInfoWindow);
 ```
@@ -666,7 +673,7 @@ Next, we create a marker object, also using an inline object. Notice how we use 
 
 ```
 marker = new google.maps.Marker({
-	position: coord,
+  position: coord,
   map: gmap,
   title: 'Here I Am!'
 });
@@ -677,8 +684,8 @@ Finally, we pull it all together with this
 
 ```
 google.maps.event.addListener(
-	marker, 'click', function() {
-	infowindow.open(gmap,marker);
+  marker, 'click', function() {
+  infowindow.open(gmap,marker);
 });
 ```
 
@@ -686,7 +693,7 @@ This is another example of an *event*, which we'll cover properly in the next mo
 
 What we are doing here is to add a so-called *listener*. We want the application to *listen out for* a click on the marker, so when it is clicked, we can display the popup box.
 
-The 3 parameters for the `addListener()` event are
+The 3 arguments for the `addListener()` event are
 
 1. The object that should be listened to
 2. The event type (mouse click)
@@ -713,7 +720,7 @@ editable: false
 layout: 2-panels-tree
 
 ---
-*How am I supposed to find out what parameters a 3rd party API expects?*,  you may ask.
+*How am I supposed to find out what arguments a 3rd party API expects?*,  you may ask.
 
 The short answer is "Google it". Any API worth its salt comes with documentation.
 

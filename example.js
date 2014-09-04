@@ -11,7 +11,7 @@ function gotPosCallback(position) {
   var gmap;
   var mapOptions = {
     center: coord,
-    zoom: 8
+    zoom: 12
   };
   var infoWindow;
   var marker;
