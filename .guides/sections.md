@@ -50,7 +50,6 @@ In this module we are going to build a small Google Maps application as a way of
 
 We are going to throw several new and important things at you in this module, so don't skip anything as we will be building on this in later modules.
 
-![](.guides/img/app-ss.jpg)
 ---
 title: Target Application
 files: []
@@ -62,8 +61,7 @@ We are finally going to do something more interesting.
 
 Watch the video below and you will see the application that we will be building in this module.
 
-
-![500x350](http://www.youtube.com/watch?v=qJwKu-myR-s&feature=youtu.be)
+![400x300](http://www.youtube.com/watch?v=xxxxxxx&feature=youtu.be)
 
 - it will show a map 
 - it should be located at your current location (you will need to give permission when the browser prompts you)
@@ -71,7 +69,10 @@ Watch the video below and you will see the application that we will be building 
 - if you click on the marker, it will show a pop-up message
 ---
 title: FUNCTIONS
-files: []
+files:
+  - path: "#preview"
+    action: open
+    ref: ""
 editable: true
 layout: 2-panels-tree
 
@@ -80,13 +81,16 @@ Sorry to do this to you, but we need to introduce you to 2 final and important p
 
 Functions are very powerful and actually rather easy to understand.
 
->Select 'Functions' from the ![](.guides/img/rocket.png) Rocket menu at the top to load some code or restore it if you mess it up.
+>The code for 'Functions' module is already loaded in your project. If you need to restore you can do from the ![](.guides/img/rocket.png) Rocket menu, select 'Functions'. 
 
-Now take a look at the code and preview it. We'll disect the code to see what functions are all about.
+Now take a look at the result in the preview. We'll dissect the code to see what functions are all about.
 ---
 title: What is a function
-files: []
-editable: true
+files:
+  - path: example.js
+    action: open
+    ref: ""
+editable: false
 layout: 2-panels-tree
 
 ---
@@ -104,11 +108,10 @@ Here is a piece of code that calculates the volume of a sphere. The formula for 
 
 This is a valid, but not elegant, way to code this
 
-```js
-var radius1=7
-var radius2=100;
-var volume1 = (4*Math.PI*radius1*radius1*radius1)/3);
-var volume2 = (4*Math.PI*radius2*radius1*radius2)/3);
+```
+var radius1=7, radius2=100;
+radius1 = (4*Math.PI*radius1*radius1*radius1)/3);
+radius2 = (4*Math.PI*radius2*radius1*radius2)/3);
 ```
 
 Here we can see how the exact same piece of code is duplicated on each line. If we made a mistake coding the formula, we would have to correct the mistake in both places. If we had it in 100 places, you can imagine the nightmare.
@@ -121,18 +124,11 @@ So, this is the way we handle it.
 function volumeSphere(radius) {
   return (4*Math.PI*radius*radius*radius)/3;
 }
-
-myFunc() {
-  var radius1=7
-  var radius2=100;
-  var volume1 = volumeSphere(radius1);
-  var volume2 = volumeSphere(radius2);
-}
 ```
 
 Now you can see how much better this *looks*. Furthermore, if I make a mistake with my formula, I simply correct the `volumeSphere` function once without having to worry about the many places it might get called from.
 ---
-title: Function Arguments
+title: Function Parameters
 files: []
 editable: false
 layout: 2-panels-tree
@@ -140,27 +136,27 @@ layout: 2-panels-tree
 ---
 Let's look at the `volumeSphere` function again
 
-```js
+```
 function volumeSphere(radius) {
   return (4*Math.PI*radius*radius*radius)/3;
 }
 ```
 
-When we call the function, we need to tell the function what the `radius` of the sphere is. To accomplish this, we create an *argument* inside the function definition.
+When we call the function, we need to tell the function what the `radius` of the sphere is. To accomplish this, we create a parameter inside the function definition.
 
-```js
+```
 volumeSphere(radius)
 ```
 
-We give the argument a sensible name and this can then be thought of as a variable that is available for the duration of function execution.
+We give the parameter a sensible name and this then behaves like a variable just while the function executes.
 
-Some functions require several arguments, so you define them like this
+Some functions require multiple parameters, so you define them like this
 
-```js
+```
 function myFunction(latitude, longitude, zoom)
 ```
 
-We will delve deeper into functions in a later module, but this is the most important thing you need to know for know about function arguments.
+We will delve deeper into functions in a later module, but this is the most important thing you need to know for know about function parameters.
 ---
 title: Return values
 files: []
@@ -170,7 +166,7 @@ layout: 2-panels-tree
 ---
 Here's our `volumeSphere` function again
 
-```js
+```
 function volumeSphere(radius) {
   return (4*Math.PI*radius*radius*radius)/3;
 }
@@ -180,7 +176,7 @@ We want our function to return the volume, so how do we do this? The answer is w
 
 We could have written it longhand like this
 
-```js
+```
 function volumeSphere(radius) {
 	var volume;
   volume = (4*Math.PI*radius*radius*radius)/3;
@@ -189,12 +185,15 @@ function volumeSphere(radius) {
 ```
 ---
 title: Example code
-files: []
-editable: false
+files:
+  - path: example.js
+    action: open
+    ref: ""
+editable: true
 layout: 2-panels-tree
 
 ---
-Now take a look at the example code by opening `example.js`. Here you can see how we have created a few functions, including a new, improved `display` function that takes 3 arguments.
+Now take a look at the rest of the example code. You can see how we have created a few functions, including a new, improved `display` function that takes 3 parameters.
 
 See if you can figure out what is going on.
 
@@ -203,14 +202,20 @@ Look at the `volumeSphere` function and see how we have `radius*radius*radius`. 
 
 ---
 title: OBJECTS
-files: []
+files:
+  - path: "#all"
+    action: close
+    ref: ""
+  - path: "#cmd: bash .guides/restore.sh 01a-objects"
+    action: open
+    ref: ""
 editable: false
 layout: 2-panels-tree
 
 ---
 Now for the final thing before we tackle our Google Maps application.
 
->Select 'Objects' from the ![](.guides/img/rocket.png) Rocket menu at the top to load some code or restore it if you mess it up.
+>We have loaded new content for you but if you need to restore you can do from the ![](.guides/img/rocket.png) Rocket menu, select 'Objects'. 
 
 An *object* is a javascript variable that consists of other variables. For example, let's say we have 3 variables `latitude`, `longitude` and `zoomLevel`.
 
@@ -237,7 +242,7 @@ var coord = {
 
 We now have an object called `coord`. `lat` and `lng` are called *keys*. I can access object keys like this
 
-```js
+```
 coord.lat = -34.397;
 coord.lng = 150.644;
 ```
@@ -271,12 +276,12 @@ layout: 2-panels-tree
 ---
 Objects are used in most modern programming languages and for very good reasons
 
-- it promotes *modularity* which makes encapsulates a real-world view of things
+- it promotes *modularity* which encapsulates a real-world view of things
 - it promotes greater flexibility and maintainability in programming
 - it makes your code easier to understand, especially when coming back to it months later or, very importantly, when other people look at your code for the first time.
 
 
-One major practical benefit that we can see in our example code is that objects can be passed from one function to another, making function calls and declarations very simple to read and to code when compared to a long list of function arguments.
+One major practical benefit that we can see in our example code is that objects can be passed from one function to another, making function calls and declarations very simple to read and to code when compared to a long list of function paramters ...
 
 ```
 showMap(combo);
@@ -288,15 +293,18 @@ Rather than this more long winded method.
 showMap(longitude, latitude, zoom);
 ```
 
-The usefulness of this becomes evident once you have objects that have tens of elements. Imagine those horribly long argument lists and function definitions!
+The usefulness of this becomes evident once you have objects that have tens of elements. Imagine those horribly long parameter lists and function definitions!
 
 ##Advanced use of objects
 There are some much more powerful things that you can do with objects and we there is a module dedicated to object oriented programming coming up.
 
 ---
 title: Example code
-files: []
-editable: false
+files:
+  - path: example.js
+    action: open
+    ref: ""
+editable: true
 layout: 2-panels-tree
 
 ---
@@ -311,22 +319,26 @@ The function `coordinates1` creates an object in a different way to the one we s
 ##Object Creation - Method 2
 The function `coordinates2` creates an object in the way we described in the previous chapter
 
-##Passing an object as an argument to a function
+##Passing an object as a parameter to a function
 Take a look at the function `coordDisplay(obj)`. You can see that it expects to be passed an object rather than 3 individual variables. You should be able to figure it out.
 
-Note that the name we give the object can be anything we choose (`obj` in our case) but it will have the same key names within it as per our object definition in the functin that calls `coordDisplay()`.
+Note that the name we give the object can be anything we choose (`obj` in our case) but it will have the same key names within it as per our object definition in the function that calls `coordDisplay()`.
 ---
 title: OUR MAP APPLICATION
-files: []
+files:
+  - path: "#all"
+    action: close
+    ref: ""
+  - path: "#cmd: bash .guides/restore.sh 02-basic"
+    action: open
+    ref: ""
 editable: false
 layout: 2-panels-tree
 
 ---
+>We have loaded new content for you but if you need to restore you can do from the ![](.guides/img/rocket.png) Rocket menu, select 'Basic Map'. 
+
 Before we run it, we will need to make sure you have a Google Account and enabled Map API access.
-
-
-##Load the sample code
->Select 'Basic Map' from the ![](.guides/img/rocket.png) Rocket menu at the top.
 
 ##Create a Google account
 You may already have one (a gmail account will do), in which case you can skip the first step.
@@ -342,7 +354,7 @@ You may already have one (a gmail account will do), in which case you can skip t
 8. On the screen that pops up, simply press 'Create' without entering anything.
 9. You will now see the following screen. You need to copy the API key (highlighted below) to the clipboard so you can paste it into your code.
 ![](.guides/img/api-key-2.png)
-10. Finally, open up your `index.html` file and look for the line shown below in the <head> section. You will see an existing (but invalid) key looking like `key=AIzaSyCSiWK2F2oq5yIZ69AwD4BRQY7nPs5gl9Y`. You may need to scroll the line to the right to see the whole line. You should replace the long key value after the `=` with the one you copied to the clipboard in the previous step.
+10. Finally, **[Click here](open_file index.html panel=0)** to open up your `index.html` file and look for the line shown below in the <head> section. You will see an existing (but invalid) key looking like `key=AIzaSyCSiWK2F2oq5yIZ69AwD4BRQY7nPs5gl9Y`. You may need to scroll the line to the right to see the whole line. You should replace the long key value after the `=` with the one you copied to the clipboard in the previous step.
 ```
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCSiWK2F2oq5yIZ69AwD4BRQY7nPs5gl9Y"></script>
 ```
@@ -350,13 +362,21 @@ You may already have one (a gmail account will do), in which case you can skip t
 All done. If you need the key again, you can find it again within [https://code.google.com/apis/console/?noredirect](https://code.google.com/apis/console/?noredirect) and then press the 'API Access' menu item.
 
 ##Testing it out
-Let's make sure everything is working properly by Previewing the project. You should see a map. If you get a message pop up saying "Google has disabled use of the Maps API for this application ...." then you have made a mistake in the above process, so carefully copy and paste the key again and make sure it looks exactly like this (but with your key).
+Let's make sure everything is working properly by Previewing the project. **[Click here](open_preview index.html)** to preview. 
+
+You should see a map. If you get a message pop up saying "Google has disabled use of the Maps API for this application ...." then you have made a mistake in the above process, so carefully copy and paste the key again and make sure it looks exactly like this (but with your key).
 
 
 ---
 title: The program flow
-files: []
-editable: false
+files:
+  - path: "#all"
+    action: close
+    ref: ""
+  - path: "index.html, #preview"
+    action: open
+    ref: ""
+editable: true
 layout: 2-panels-tree
 
 ---
@@ -387,7 +407,7 @@ Near the bottom, you will see that we invoke our Javascript function `googleMaps
 This calls and executes the `googleMapsPlay()` function in `example.js`.
 
 ##window.onload
-Now, let's look at the `googleMapsPlay()` function in `example.js`.
+Now, **[Click here](open_file example.js panel=0)** and let's look at the `googleMapsPlay()` function in `example.js`.
 
 You can see there is only a single line in the function 
 
@@ -447,7 +467,7 @@ gmap = new google.maps.Map(
   mapOptions);
 ```
 
-In the same way we *included* our `example.js` file in the <head> section of `index.html`, we also incuded the Google Maps API. This API is managed by another `.js` file, but this time it does not live within our project, but on the web. If you look at the include line, you can see the actual url (web address) of the file.
+In the same way we *included* our `example.js` file in the <head> section of `index.html`, we also include the Google Maps API. This API is managed by another `.js` file, but this time it does not live within our project, but on the web. If you look at the include line, you can see the actual url (web address) of the file.
 
 ```
 <script type="text/javascript"
@@ -468,7 +488,7 @@ gmap = new google.maps.Map(
    mapOptions);
 ```
 
-With `new google.maps.Map`, we are creating a new Map object, which is defined and managed by the Google Maps API. This is a slightly different way of creating an object than we looked at earlier and we will be building our own objects of this type in a later module.
+With `new google.maps.Map`, we are creating a new Map object, which is defined and managed by the Google Maps API.
 
 But we need to tell the Maps API 
 
@@ -480,7 +500,7 @@ We tell it *where* to display it on our page with  `document.getElementById("map
 We tell it *how* to display using our nicely created `mapOptions` object
 
 ##What is going on precisely?
-Don't worry too much about this as we will be convering this in our next module.
+Don't worry too much about this as we will be covering this in our next module.
 
 ```
 gmap = new google.maps.Map(
@@ -490,12 +510,18 @@ gmap = new google.maps.Map(
 
 For those interested, we are creating a new Map object variable `gmap`. What's special about this is that the creation of the object
 
-- takes arguments (the HTML id and the mapOptions object)
-- actually displays the map (we don't worry about this, the Google API does)
+- takes parameters (the HTML id and the mapOptions object)
+- actually displays the map (we don't worry about this, the Google API does that)
 - give us back a regular Javascript object that we can store, use and refer to later.
 ---
 title: Getting your current location
-files: []
+files:
+  - path: "#all"
+    action: close
+    ref: ""
+  - path: "#cmd: bash .guides/restore.sh 03-location, #preview"
+    action: open
+    ref: ""
 editable: false
 layout: 2-panels-tree
 
@@ -504,14 +530,17 @@ So Sydney, Australia may not be of much interest to you, but your current locati
 
 So what we'll do now is to get the map to be positioned at your current location. The browser actually can give you your latitude and longitude coordinates fairly accurately, although not as accurately as GPS.
 
->Select 'Geolocation' from the ![](.guides/img/rocket.png) Rocket menu at the top.
+>We have loaded new content for you but if you need to restore you can do from the ![](.guides/img/rocket.png) Rocket menu, select 'Geolocation'. 
 
-Preview to see what should be your current location.
+The Preview that has been opened should now show your current location. Your browser may ask you if you want to allow access to your location
 
 In order to explain the code, we need to introduce a new and important concept - *callbacks*.
 ---
 title: Callbacks
-files: []
+files:
+  - path: "#all"
+    action: close
+    ref: ""
 editable: false
 layout: 2-panels-tree
 
@@ -533,7 +562,7 @@ editable: false
 layout: ""
 
 ---
-All of the functions you have written so far are *blocking* functions. Take this simple code snippet
+Take this simple code snippet
 
 ```
 function squared(value) {
@@ -542,7 +571,7 @@ function squared(value) {
 
 function main() {
 	var x = squared(7);
-	display(x);
+  display(x);
 }
 ```
 
@@ -550,9 +579,7 @@ function main() {
 
 When `x = squared(7)` is called in the `main()` function, the `display()` function will not get called until `squared()` has finished and returned a value back to `main()`.
 
-Therefore, `squared()` is blocking the execution of our `main()` function until `squared()` has returned.
-
-The blocking nature of `squared()` is not just fine, it is required.
+In this type of code, the blocking nature of `squared()` is not just fine, it is required.
 ---
 title: Non-blocking / Asynchronous functions
 files: []
@@ -562,23 +589,23 @@ layout: ""
 ---
 Now consider this *pseudo-code* (which means it is illustrative, not functional code)
 
-```js
+```
 function main() {
-  displayMap();
+	displayMap();
   getFlightArrivals();
   getTemperature();
 }
 ```
 
-Let's assume that we are using *web services* (like the Google Maps API) to get the flight arrival and temperature. Each of these services might take 2 seconds to process. If we each of these functions was *blocking*, then we would wait until the map was displayed before getting the flight arrivals before finally getting the temperature.
+Let's assume that we are using *web services* (like the Google Maps API) to get the flight arrival and temperature. Each of these services might take 2 seconds to process. If we took a blocking approach, then we would wait until the map was displayed before getting the flight arrivals and then before getting the temperature.
 
 In other words, we would wait 6 seconds in total.
 
-However, if these are *non-blocking*, *asynchronous* functions, then we call `displayMap()`, which returns instantly. We then call `getFlightArrivals()` which returns instantly and finally `getTemperature()`.
+However, if these are non-blocking, asynchronous functions, then we call `displayMap()`, which returns instantly. We then call `getFlightArrivals()` which returns instantly and finally `getTemperature()`.
 
 But what about the data we expect back from them? This is what callback functions do. 
 
-> a callback is a piece of executable code that is passed as an argument to other code, which is expected to call back (execute) the argument at some convenient time.
+> A callback function is called upon completion of execution by an asynchronous function
 
 So, our pseudo-code looks like this
 
@@ -594,31 +621,35 @@ function gotTemperature(temperatureObject) {
 }
 
 function main() {
-  displayMap(mapCompleted);
+	displayMap(mapCompleted);
   getFlightArrivals(arrivalsCompleted);
   getTemperature(gotTemperature);
 }
 ```
 
-In each case, we are passing a function (it's name) as an argument. 
+In each case, we are passing a function name (which is a variable like most things in Javascript) as a parameter. 
 
 The called function (`getFlightArrivals()` for example) will now do it's stuff and once finished, rather than returning a value in the way normal functions do, it will call `arrivalsCompleted()`, passing in any arrivals data as an object.
-
-In a later module we will be lookin at how you write your own functions that trigger a callback function.
 ---
 title: Geolocation code explained
-files: []
-editable: false
+files:
+  - path: "#all"
+    action: close
+    ref: ""
+  - path: example.js
+    action: open
+    ref: ""
+editable: true
 layout: 2-panels-tree
 
 ---
-Now we've covered callbacks, we're ready to look at our code again. Make sure you've selected 'Geolocation' from the ![](.guides/img/rocket.png) Rocket menu at the top.
+Now we've covered callbacks, we're ready to look at our code again.
 
 Let's look at the code at the bottom of `example.js`
 
 ```
 function getCurrentLocation(){
-  navigator.geolocation.getCurrentPosition(
+	navigator.geolocation.getCurrentPosition(
     gotPosCallback, errorFunction);	
 }
 
@@ -639,11 +670,11 @@ Let's look at our `getCurrentLocation()` function.
 ```
 function getCurrentLocation(){
   navigator.geolocation.getCurrentPosition(
-    gotPosCallback, errorFunction);    
+      gotPosCallback, errorFunction);    
 }
 ```
 
-We can see that `navigator.geolocation.getCurrentPosition()` expects to receive 2 arguments.
+We can see that `navigator.geolocation.getCurrentPosition()` expects to receive 2 parameters
 
 1. A callback function that it should trigger once the position has been determined
 2. A callback function that it should trigger if there was any error in getting the position
@@ -651,42 +682,48 @@ We can see that `navigator.geolocation.getCurrentPosition()` expects to receive 
 If you look higher up in the code, you will see that these 2 functions `gotPosCallback()` and `errorFunction()` are both defined.
 
 ##Displaying the map in the callback function
-If you look at `gotPosCallback()`, our callback function, you will see that it is doing exactly what `displayMap()` did in our first, basic example. In fact, we could just have well have called the function `displayMap()` but we chose another function name to highligt its callback nature.
+If you look at `gotPosCallback()`, our callback function, you will see that it is doing exactly what `displayMap()` did in our first, basic example. In fact, we could just have well have called the function `displayMap()` but we chose another function name to highlight its callback nature.
 ---
 title: Adding a Marker to the Map
-files: []
-editable: false
+files:
+  - path: "#all"
+    action: close
+    ref: ""
+  - path: "#cmd: bash .guides/restore.sh 04-marker, example.js, #preview"
+    action: open
+    ref: ""
+editable: true
 layout: 2-panels-tree
 
 ---
 The last thing we'll do with our application is to add a marker onto the page to pinpoint your current location.
 
->Select 'Add a Marker' from the ![](.guides/img/rocket.png) Rocket menu at the top.
+>We have loaded new content for you but if you need to restore you can do from the ![](.guides/img/rocket.png) Rocket menu, select 'Add a Marker'. 
 
-If you preview it, we can see not only is there a marker on it, but if you click on the marker, you get a custom popup.
+If you look at the preview, we can see not only is there a marker on it, but if you click on the marker, you get a custom popup.
 
 This is accomplished by adding some code to our main `gotPosCallback()` function.
 
 ```
 infowindow = new google.maps.InfoWindow({
-  content: "<div id='mycontent'>This is where I am
-    <b>currently</b> sitting.</div>"
+	content: "<div id='mycontent'>This is where I am
+	<b>currently</b> sitting.</div>"
 });
 
 marker = new google.maps.Marker({
-  position: coord,
+	position: coord,
   map: gmap,
   title: 'Here I Am!'
 });
 
 google.maps.event.addListener(
-  marker, 'click', function() {
-  infowindow.open(gmap,marker);
+	marker, 'click', function() {
+	infowindow.open(gmap,marker);
 });
 ```
 
 ##Inline Objects
-This code shows a shorthand way of writing code that is used a lot but makes the code a little harder to read. Rather than defininf a separate object variable, we code it *inline*.
+This code shows a shorthand way of writing code that is used a lot but makes the code a little harder to read. Rather than define a separate object variable, we code it *inline*.
 
 Let's take this piece of code 
 
@@ -701,8 +738,8 @@ This allows us to create a Google Maps InfoWindow object. We could have written 
 
 ```
 var objInfoWindow = {
-  content: "<div id='mycontent'>This is where I am
-    <b>currently</b> sitting.</div>"
+	content: "<div id='mycontent'>This is where I am
+	  <b>currently</b> sitting.</div>"
 };
 infowindow = new google.maps.InfoWindow(objInfoWindow);
 ```
@@ -715,7 +752,7 @@ Next, we create a marker object, also using an inline object. Notice how we use 
 
 ```
 marker = new google.maps.Marker({
-  position: coord,
+	position: coord,
   map: gmap,
   title: 'Here I Am!'
 });
@@ -726,8 +763,8 @@ Finally, we pull it all together with this
 
 ```
 google.maps.event.addListener(
-  marker, 'click', function() {
-  infowindow.open(gmap,marker);
+	marker, 'click', function() {
+	infowindow.open(gmap,marker);
 });
 ```
 
@@ -735,7 +772,7 @@ This is another example of an *event*, which we'll cover properly in the next mo
 
 What we are doing here is to add a so-called *listener*. We want the application to *listen out for* a click on the marker, so when it is clicked, we can display the popup box.
 
-The 3 arguments for the `addListener()` event are
+The 3 parameters for the `addListener()` event are
 
 1. The object that should be listened to
 2. The event type (mouse click)
@@ -757,12 +794,15 @@ Anyway, what the code does is to display the popup window. It is handled by the 
 
 ---
 title: API documentation
-files: []
+files:
+  - path: "#all"
+    action: close
+    ref: ""
 editable: false
 layout: 2-panels-tree
 
 ---
-*How am I supposed to find out what arguments a 3rd party API expects?*,  you may ask.
+*How am I supposed to find out what parameters a 3rd party API expects?*,  you may ask.
 
 The short answer is "Google it". Any API worth its salt comes with documentation.
 
@@ -782,8 +822,8 @@ editable: false
 layout: ""
 
 ---
-So that's it. This module was a very major step in terms in applying your coding knowlegde to something practical. 
+So that's it. This module was a very major step in terms in applying your coding knowledge to something practical. 
 
 It is very important that you fully understand these concepts, as we will build on these in he next modules.
 
-Feel free to hack the code around as much as you like as you can always restore it from the Rocket menu.
+Feel free to hack the code around as much as you like as you can always restore it from the ![](.guides/img/rocket.png) Rocket menu.
