@@ -1,50 +1,49 @@
 /**
-* Created with cc-jsintro-6-func-obj-maps.
+* JS Examples
 * User: fmay
-* Date: 2014-08-28
-* Time: 05:04 PM
-* To change this template use Tools | Templates.
+* Date: 2014-08-24
+* Time: 10:20 AM
 */
 
-function display(message, pre, post) {
-  var i;
-	for(i=0; i<pre; i++)
-  	document.write("<br/>");
-  document.write(message);
-	for(i=0; i<post; i++)
-    document.write("<br/>");
-}
 
-function square(value) {
-  return value*value;
-}
-
-function areaOfCircle(radius) {
-  var area = Math.PI * square(radius);
-  return area;
-}
-
-
-function volumeSphere(radius) {
-  return (4*Math.PI*radius*radius*radius)/3;
-}
-
-function play() {
-  var x = 7;
-	var radius1=7;
-  var radius2=100;
+function gotPosCallback(position) {
+  var coord = {};
+  var gmap;
+  var mapOptions = {
+    center: coord,
+    zoom: 8
+  };
+  var infoWindow;
+  var marker;
   
-	display("FUNCTIONS", 0, 2);
+  coord.lat = position.coords.latitude;
+  coord.lng = position.coords.longitude;  
+  gmap = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
   
-  display(x + " squared = " + square(x), 0, 1);
-  display("A circle with radius " + x + " has an area of " + areaOfCircle(x));
-  
+  infowindow = new google.maps.InfoWindow({
+      content: "<div id='mycontent'>This is where I am <b>currently</b> sitting.</div>"
+  });
 
-  display("A sphere with radius " + radius1 + " has an volume of " + ((4*Math.PI*radius1*radius1*radius1)/3),2,0);
-  display("A sphere with radius " + radius2 + " has an volume of " + ((4*Math.PI*radius2*radius2*radius2)/3),1,0);  
-  
-  display("A sphere with radius " + radius1 + " has an volume of " + volumeSphere(radius1),2,0);
-  display("A sphere with radius " + radius2 + " has an volume of " + volumeSphere(radius2),1,0);
-
+  marker = new google.maps.Marker({
+      position: coord,
+      map: gmap,
+      title: 'Here I Am!'
+  });
+  google.maps.event.addListener(marker, 'click', function() {
+    infowindow.open(gmap,marker);
+  });
   
 }
+
+function errorFunction () {
+  document.write("Unable to get the coordinates from the browser");
+}
+
+function getCurrentLocation() {
+	navigator.geolocation.getCurrentPosition(gotPosCallback, errorFunction);	
+}
+
+function googleMapsPlay() {
+  window.onload = getCurrentLocation;
+}
+
