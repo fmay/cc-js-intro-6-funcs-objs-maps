@@ -1,48 +1,46 @@
 ---
 title: "FUNCTIONS, CALLBACKS, OBJECTS & GOOGLE MAPS"
 files: []
-editable: true
 layout: 2-panels-tree
 
 ---
-#'Forking' this module
+# 'Forking' this module
 If you check the url address bar of your browser, if it starts with `https://codio.com/anon/....` then this means it is an anonymous project and any changes you make will be lost when you close down the browser tab. This will be the case if you access the module from the Codio Courses screen.
 
 To avoid losing changes, you can 'fork' the module into your own Codio account where it will appear in your projects list. To do this, select the **'Project->Fork'** menu item and choose a suitable name for the project.
 
-#A few words about the Codio Guide
+# A few words about the Codio Guide
 Before we start with this module here are a few pointers about using this Codio Guide.
 
 If you've already read this in another Guide then skip to the next section.
 
 ![](.guides/img/guides-helper.jpg)
 
-#The File Tree
+# The File Tree
 The left most panel is the File Tree **(1)**. This is where your project's files are stored. You can open up files you see listed there by clicking on them.
 
-#About the Codio Guide
+# About the Codio Guide
 The Codio Guide **(2)** is the content you are reading right now. It's worth knowing the following
 
 - if you ever close the Guide tab by mistake, simply open in from the View menu **(3)**.
 - you can expand and collapse the Guide's Table of Contents **(4)** with the Hamburger icon **(5)**
 - you move from one section of the Guide to the next using either the Table of Contents or the Navigation Buttons (6)
 
-#The Rocket Menu
+# The Rocket Menu
 The Rocket menu **(7)** is a dropdown menu that lets you load code into your file tree when you click it as different sections might want to show different bits of code.
 
 You are usually encouraged to mess around with the live code. It is perfectly likely that you can wreck the code so pressing the Rocket menu button will restore the code again to its original state.
 
-#Previewing
+# Previewing
 The Preview button **(8)** lets you run your web application. When you press it, it will open up a preview window so you can play with your app.
 
-#Code Tabs
+# Code Tabs
 When you open some code from the file tree or the Codio Guide opens a file for you automatically, they will appear within a tab **(9)** in one of the panels. You can have several of these open at one time so you may need to click on the respective tab to get to see the file you want.
 
 
 ---
 title: Introduction
 files: []
-editable: false
 layout: ""
 
 ---
@@ -55,7 +53,6 @@ We are going to throw several new and important things at you in this module, so
 ---
 title: Target Application
 files: []
-editable: true
 layout: 2-panels-tree
 
 ---
@@ -75,7 +72,6 @@ files:
   - path: "#preview"
     action: open
     ref: ""
-editable: true
 layout: 2-panels-tree
 
 ---
@@ -92,7 +88,6 @@ files:
   - path: example.js
     action: open
     ref: ""
-editable: false
 layout: 2-panels-tree
 
 ---
@@ -103,7 +98,7 @@ There are a couple of reasons why you should use functions rather than simply ha
 - if your code inside one function gets long and unreadable, it is good practice to remove logical chunks of code into a separate function and then call that function instead
 - if your **ever** have a chunk of code that gets used in more than one place then you should never duplicate your code as you will have to update that code in every place it is used.
 
-##Without a function
+## Without a function
 Here is a piece of code that calculates the volume of a sphere. The formula for calculating this is
 
 ![](.guides/img/sphere.png)
@@ -132,7 +127,6 @@ Now you can see how much better this *looks*. Furthermore, if I make a mistake w
 ---
 title: Function Parameters
 files: []
-editable: false
 layout: 2-panels-tree
 
 ---
@@ -162,7 +156,6 @@ We will delve deeper into functions in a later module, but this is the most impo
 ---
 title: Return values
 files: []
-editable: false
 layout: 2-panels-tree
 
 ---
@@ -191,7 +184,6 @@ files:
   - path: example.js
     action: open
     ref: ""
-editable: true
 layout: 2-panels-tree
 
 ---
@@ -199,7 +191,7 @@ Now take a look at the rest of the example code. You can see how we have created
 
 See if you can figure out what is going on.
 
-##Challenge
+## Challenge
 Look at the `volumeSphere` function and see how we have `radius*radius*radius`. Why not create a new function `cubed()` and call it from `volumeSphere()`, making it even more elegant.
 
 ---
@@ -211,7 +203,6 @@ files:
   - path: "#cmd: bash .guides/restore.sh 01a-objects"
     action: open
     ref: ""
-editable: false
 layout: 2-panels-tree
 
 ---
@@ -272,7 +263,6 @@ combo.zoom = 8;
 ---
 title: Why use an Object
 files: []
-editable: false
 layout: 2-panels-tree
 
 ---
@@ -297,7 +287,7 @@ showMap(longitude, latitude, zoom);
 
 The usefulness of this becomes evident once you have objects that have tens of elements. Imagine those horribly long parameter lists and function definitions!
 
-##Advanced use of objects
+## Advanced use of objects
 There are some much more powerful things that you can do with objects and we there is a module dedicated to object oriented programming coming up.
 
 ---
@@ -306,22 +296,21 @@ files:
   - path: example.js
     action: open
     ref: ""
-editable: true
 layout: 2-panels-tree
 
 ---
 Our Objects sample code shows us using objects. There are some important things to note.
 
-##Object Creation - Method 1
+## Object Creation - Method 1
 The function `coordinates1` creates an object in a different way to the one we showed earlier. 
 
 - it first creates an empty object with `var coord = {};`
 - it then creates new elements one the following 2 lines; Javascript automatically adds these to the newly created object, so they are *dynamically* created
 
-##Object Creation - Method 2
+## Object Creation - Method 2
 The function `coordinates2` creates an object in the way we described in the previous chapter
 
-##Passing an object as a parameter to a function
+## Passing an object as a parameter to a function
 Take a look at the function `coordDisplay(obj)`. You can see that it expects to be passed an object rather than 3 individual variables. You should be able to figure it out.
 
 Note that the name we give the object can be anything we choose (`obj` in our case) but it will have the same key names within it as per our object definition in the function that calls `coordDisplay()`.
@@ -334,7 +323,6 @@ files:
   - path: "#cmd: bash .guides/restore.sh 02-basic"
     action: open
     ref: ""
-editable: false
 layout: 2-panels-tree
 
 ---
@@ -342,7 +330,7 @@ layout: 2-panels-tree
 
 Before we run it, we will need to make sure you have a Google Account and enabled Map API access.
 
-##Create a Google account
+## Create a Google account
 You may already have one (a gmail account will do), in which case you can skip the first step.
 
 1. If you have not got one, then create one now. You can do this [here](https://accounts.google.com/signup?service=mail)
@@ -363,7 +351,7 @@ You may already have one (a gmail account will do), in which case you can skip t
 
 All done. If you need the key again, you can find it again within [https://code.google.com/apis/console/?noredirect](https://code.google.com/apis/console/?noredirect) and then press the 'API Access' menu item.
 
-##Testing it out
+## Testing it out
 Let's make sure everything is working properly by Previewing the project. **[Click here](open_preview index.html)** to preview. 
 
 You should see a map. If you get a message pop up saying "Google has disabled use of the Maps API for this application ...." then you have made a mistake in the above process, so carefully copy and paste the key again and make sure it looks exactly like this (but with your key).
@@ -378,13 +366,12 @@ files:
   - path: "index.html, #preview"
     action: open
     ref: ""
-editable: true
 layout: 2-panels-tree
 
 ---
 Run the Preview and you will see we get a map centered on Sydney, Australia.
 
-###index.html
+### index.html
 Let's go back to our `index.html` file and see what is happening. 
 
 At the top, in the <head> section you can see that we are telling the browser to load our `example.js` javascript file (you may need to scroll to the right).
@@ -397,7 +384,7 @@ At the top, in the <head> section you can see that we are telling the browser to
 
 As this is in the <head> section, it gets loaded before the <body> section does, so it is ready and waiting.
 
-##Calling a script
+## Calling a script
 Near the bottom, you will see that we invoke our Javascript function `googleMapsPlay();`. 
 
 ```
@@ -408,7 +395,7 @@ Near the bottom, you will see that we invoke our Javascript function `googleMaps
 
 This calls and executes the `googleMapsPlay()` function in `example.js`.
 
-##window.onload
+## window.onload
 Now, **[Click here](open_file example.js panel=0)** and let's look at the `googleMapsPlay()` function in `example.js`.
 
 You can see there is only a single line in the function 
@@ -437,7 +424,6 @@ The browser will now ensure that displayMap() gets called at the right time.
 ---
 title: The displayMap() function
 files: []
-editable: false
 layout: 2-panels-tree
 
 ---
@@ -456,11 +442,11 @@ After our lesson on objects, it should be fairly easy to understand what is goin
   };  
 ```
 
-##Setup
+## Setup
 - we create an object `coord` and hard code the latitude and longitude values to be -34.397 and 150.644
 - we now set up the `mapOptions` object variable and set the `center` location to the the `coord` object we just created and the `zoom` value to be 8. Feel free to change the `zoom` value and see what happens.
 
-##Creating the map
+## Creating the map
 This line is the really cool bit and does all the heavy lifting (you may need to scroll to the right to see it all)
 
 ```
@@ -481,7 +467,7 @@ The `src=` attribute tells us where it is getting it from.
 
 You do not need to know anything about this. It just needs to be included.
 
-##Creating the Google Maps object
+## Creating the Google Maps object
 So, now we know how to link in the Google Maps API, let's look at our killer statement again
 
 ```
@@ -501,7 +487,7 @@ We tell it *where* to display it on our page with  `document.getElementById("map
 
 We tell it *how* to display using our nicely created `mapOptions` object
 
-##What is going on precisely?
+## What is going on precisely?
 Don't worry too much about this as we will be covering this in our next module.
 
 ```
@@ -524,7 +510,6 @@ files:
   - path: "#cmd: bash .guides/restore.sh 03-location, #preview"
     action: open
     ref: ""
-editable: false
 layout: 2-panels-tree
 
 ---
@@ -543,7 +528,6 @@ files:
   - path: "#all"
     action: close
     ref: ""
-editable: false
 layout: 2-panels-tree
 
 ---
@@ -560,7 +544,6 @@ Let's dig a little deeper.
 ---
 title: Blocking/Synchronous functions
 files: []
-editable: false
 layout: ""
 
 ---
@@ -585,7 +568,6 @@ In this type of code, the blocking nature of `squared()` is not just fine, it is
 ---
 title: Non-blocking / Asynchronous functions
 files: []
-editable: false
 layout: ""
 
 ---
@@ -641,7 +623,6 @@ files:
   - path: example.js
     action: open
     ref: ""
-editable: true
 layout: 2-panels-tree
 
 ---
@@ -666,7 +647,7 @@ To get our current coordinates, we make use of the `navigator` object, which is 
 
 Within `navigator` there is further object `geolocation` and that in turn gives us a function called `getCurrentPosition()`. You can read all about the [Navigator object](https://developer.mozilla.org/en-US/docs/Web/API/Navigator) and the [Geolocation object](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation) if you like.
 
-##The Callbacks
+## The Callbacks
 Let's look at our `getCurrentLocation()` function. 
 
 ```
@@ -683,7 +664,7 @@ We can see that `navigator.geolocation.getCurrentPosition()` expects to receive 
 
 If you look higher up in the code, you will see that these 2 functions `gotPosCallback()` and `errorFunction()` are both defined.
 
-##Displaying the map in the callback function
+## Displaying the map in the callback function
 If you look at `gotPosCallback()`, our callback function, you will see that it is doing exactly what `displayMap()` did in our first, basic example. In fact, we could just have well have called the function `displayMap()` but we chose another function name to highlight its callback nature.
 ---
 title: Adding a Marker to the Map
@@ -694,7 +675,6 @@ files:
   - path: "#cmd: bash .guides/restore.sh 04-marker, example.js, #preview"
     action: open
     ref: ""
-editable: true
 layout: 2-panels-tree
 
 ---
@@ -724,7 +704,7 @@ google.maps.event.addListener(
 });
 ```
 
-##Inline Objects
+## Inline Objects
 This code shows a shorthand way of writing code that is used a lot but makes the code a little harder to read. Rather than define a separate object variable, we code it *inline*.
 
 Let's take this piece of code 
@@ -760,7 +740,7 @@ marker = new google.maps.Marker({
 });
 ```
 
-##Inline Functions
+## Inline Functions
 Finally, we pull it all together with this 
 
 ```
@@ -800,7 +780,6 @@ files:
   - path: "#all"
     action: close
     ref: ""
-editable: false
 layout: 2-panels-tree
 
 ---
